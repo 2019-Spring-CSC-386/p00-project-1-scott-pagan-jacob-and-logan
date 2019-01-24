@@ -20,6 +20,13 @@ This product will solve the issue of not waking up due to getting used to an ala
   - Instead of an accelerometer we are instead using a flip switch to keep track of how many times the device is shaken.
   - We are also using a realtime clock module to manage the time and set alarms.
   - We intend to use the real time clock and flip switch to control the buzzer we will be using for the alarm.
+ 
+ #Images
+ (images/picture1.jpg)
+ (images/picture2.jpg)
+ (images/picture3.jpg)
+ (images/picture4.jpg)
+ (images/picture5.jpg)
   
 # Files
 - Images Folder
