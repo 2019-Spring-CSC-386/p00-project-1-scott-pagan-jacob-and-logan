@@ -1,5 +1,11 @@
 # P00: Scott Pagan: Jacob and Logan
-
+```diff
+- Make sure you follow submission instructions. Fortunately, I was able to find your repo to fix your grade.
+- Great job outlining the product and purpose. 
+- Good documentation of the build so far with images and the diagram.
+- References should include links to exact resource (Stack Overflow is not specific enough).  
+- Readme is in great shape. Good job guys.
+```
 **Author(s)**: Jacob Beckman and Logan Owens
 
 **Google Document**: https://docs.google.com/document/d/1hsyco2lYED1d21zSUrluGJs95nO4BOk33x6JR7TQmBE/edit?usp=sharing
