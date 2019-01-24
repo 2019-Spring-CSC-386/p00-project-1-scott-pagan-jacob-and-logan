@@ -40,7 +40,7 @@ This product will solve the issue of not waking up due to getting used to an ala
 
 # References
 - Arduino IDE 
-- Stack Overflow
+- Stack Overflow: Will probably be used in the future
 - Berea College
-- SparkFun DS3234 Real-Time Clock Packages
-- Arduino IDE Example: Digital Debouncer
+- SparkFun DS3234 Real-Time Clock Packages - https://learn.sparkfun.com/tutorials/deadon-rtc-breakout-hookup-guide/all
+- Arduino IDE Example: Digital Debouncer - https://learn.adafruit.com/tilt-sensor/using-a-tilt-sensor
