@@ -22,6 +22,7 @@ This product will solve the issue of not waking up due to getting used to an ala
   - We intend to use the real time clock and flip switch to control the buzzer we will be using for the alarm.
  
  #Images
+ ![A sample image to show how to add one to a repo](images/example.png "A sample image. This is the text that appears.")
  !(images/picture1.jpg)
  !(images/picture2.jpg)
  !(images/picture3.jpg)
