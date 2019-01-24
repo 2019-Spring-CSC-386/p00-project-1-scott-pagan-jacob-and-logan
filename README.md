@@ -23,11 +23,13 @@ This product will solve the issue of not waking up due to getting used to an ala
  
  #Images
  ![A sample image to show how to add one to a repo](images/example.png "A sample image. This is the text that appears.")
- !(images/picture1.jpg)
- !(images/picture2.jpg)
- !(images/picture3.jpg)
- !(images/picture4.jpg)
- !(images/picture5.jpg)
+ ![Top of the Breadboard for Tilt Switch connections](images/picture1.jpg)
+ ![Top of the Arduino for Tilt Switch Connection](images/picture2.jpg)
+ ![Top of the Arduino for Tilt Switch Connection]](images/picture3.jpg)
+ ![Top of the Breadboard for Real Time Clock Connections](images/picture6jpg)
+ ![Top of the arduino for Real Time Clock Connections](images/picture7.jpg)
+ ![Diagram of Real Time Clock Connection](images/deadonrtc-example-circuit_bb.png)
+ ![Diagram of Tilt Switch Connection](images/force__flex_tiltarduinolay.gif)
   
 # Files
 - Images Folder
