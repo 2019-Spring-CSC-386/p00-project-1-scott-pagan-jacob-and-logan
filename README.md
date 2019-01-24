@@ -16,15 +16,21 @@ This product will solve the issue of not waking up due to getting used to an ala
   - A function to check if the accelerometer has exceeded a preset threshold to turn off the speakers.
   - A function that determines what time it is based on either information from maybe WiFi or a preset internal clock, possibly a combination of both.
   - A function that plays a tone.
+  Revisions:
+  - Instead of an accelerometer we are instead using a flip switch to keep track of how many times the device is shaken.
+  - We are also using a realtime clock module to manage the time and set alarms.
+  - We intend to use the real time clock and flip switch to control the buzzer we will be using for the alarm.
   
 # Files
 - Images Folder
 - License
 - README.MD
 - example-README.MD
+- Jacob_and_Logan Guide to Computer Necromancy Vol. 1 (main project file-will be renamed at a later date)
 
 # References
 - Arduino IDE 
 - Stack Overflow
-- Berea College 
-
+- Berea College
+- SparkFun DS3234 Real-Time Clock Packages
+- Arduino IDE Example: Digital Debouncer
