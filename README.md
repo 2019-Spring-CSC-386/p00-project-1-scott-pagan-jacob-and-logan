@@ -36,7 +36,7 @@ This product will solve the issue of not waking up due to getting used to an ala
 - License
 - README.MD
 - example-README.MD
-- Jacob_and_Logan Guide to Computer Necromancy Vol. 1 (main project file-will be renamed at a later date)
+- Jacob_and_Logan Guide to Computer Necromancy Vol. 1.ino (main project file-will be renamed at a later date)
 
 # References
 - Arduino IDE 
