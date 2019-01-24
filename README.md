@@ -21,7 +21,7 @@ This product will solve the issue of not waking up due to getting used to an ala
   - We are also using a realtime clock module to manage the time and set alarms.
   - We intend to use the real time clock and flip switch to control the buzzer we will be using for the alarm.
  
- #Images
+ # Images
 
  ![Top of the Breadboard for Tilt Switch connections](images/picture1.jpg)
  ![Top of the Arduino for Tilt Switch Connection](images/picture2.jpg)
