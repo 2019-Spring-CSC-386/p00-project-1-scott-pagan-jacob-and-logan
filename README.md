@@ -44,3 +44,45 @@ This product will solve the issue of not waking up due to getting used to an ala
 - Berea College
 - SparkFun DS3234 Real-Time Clock Packages - https://learn.sparkfun.com/tutorials/deadon-rtc-breakout-hookup-guide/all
 - Arduino IDE Example: Digital Debouncer - https://learn.adafruit.com/tilt-sensor/using-a-tilt-sensor
+
+# Summary
+
+You'll complete this part at the end of the project.
+
+Provide a brief summary description of the design and implementation, including how much your initial design plan evolved, the final result you achieved and the amount of time you spent as a programmer in accomplishing these results, including any challenges overcome and innovations that were not specifically required by the assignment. This section should be no more than three paragraphs.
+Instructions
+
+Explain how to use your product. This section should THOROUGHLY describe its usage (i.e., more than just "Push start").
+Errors and Constraints
+
+
+
+You'll complete this part at the end of the project.
+
+Every program has bugs. Use this section to create a bullet list of all known errors and deficiencies that remain in your product. Also, list any constraints that must exist for your product to work (e.g., Only works in low light situations).
+Reflection
+
+You'll complete this part at the end of the project.
+
+Write 2 - 4 paragraphs on your reactions to the final project. Your reflection should be thoughtful and reflective. It is NOT a report about WHAT you did. Instead, it's a look back at what you learned by doing this project. It should be critical of shortcomings (yours, as well as the instructors/assignments) as well as celebratory of what was achieved.
+
+# Final Self-Evaluations
+
+Partner 1 (replace this with your name): 0-10
+
+Partner 2 (replace this with your name): 0-10
+Code creation:
+
+Partner 1 (replace this with your name): 0-10
+
+Partner 2 (replace this with your name): 0-10
+Documentation creation:
+
+Partner 1 (replace this with your name): 0-10
+
+Partner 2 (replace this with your name): 0-10
+Teamwork & Participation:
+
+Partner 1 (replace this with your name): 0-10
+
+Partner 2 (replace this with your name): 0-10
