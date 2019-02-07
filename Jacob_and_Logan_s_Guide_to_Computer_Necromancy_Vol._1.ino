@@ -101,7 +101,7 @@ void loop()
     {
       shakeCounter = 0;
       Serial.println("ALARM 1!");
-      while (shakeCounter <= 50){
+      while (shakeCounter <= 100){
         Serial.println(shakeCounter);
         tone(outPin, 10000,10); 
         shakeSwitch();
@@ -109,7 +109,7 @@ void loop()
       
      
       // Re-set the alarm for when s=30:
-      rtc.setAlarm1(05,27,11);
+      rtc.setAlarm1(rtc.minute() + 1);
     }
     // Check rtc.alarm2() to see if alarm 2 triggered the interrupt
     //if (rtc.alarm2())
@@ -178,8 +178,8 @@ void shakeSwitch()
      // Now invert the output on the pin13 LED
     if (switchstate == HIGH){
       shakeCounter++;
-      Serial.print("Switch ON");
-      Serial.print(shakeCounter);
+      //Serial.print("Switch ON");
+      //Serial.print(shakeCounter);
       
     }
   }
