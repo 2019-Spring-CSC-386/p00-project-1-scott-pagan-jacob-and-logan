@@ -60,7 +60,7 @@ void setup()
   //rtc.setTime(16, 32, 7, 2, 31, 10, 16);  // Uncomment to manually set time
 
   // Update time/date values, so we can set alarms
-  rtc.update();
+  //rtc.update();
   // Configure Alarm(s):
   // (Optional: enable SQW pin as an interrupt)
   rtc.enableAlarmInterrupt();
@@ -76,36 +76,8 @@ void setup()
  
 void loop()
 {
-  int switchstate;
- 
-  reading = digitalRead(inPin);
- 
-  // If the switch changed, due to bounce or pressing...
-  if (reading != previous) {
-    // reset the debouncing timer
-    time = millis();
-  } 
- 
-  if ((millis() - time) > debounce) {
-     // whatever the switch is at, its been there for a long time
-     // so lets settle on it!
-     switchstate = reading;
- 
-     // Now invert the output on the pin13 LED
-    if (switchstate == HIGH){
-      shakeCounter++;
-      Serial.print("Switch ON");
-      Serial.print(shakeCounter);
-      
-    }
-  }
-  //digitalWrite(outPin, LEDstate);
- 
-  // Save the last reading so we keep a running tally
-  previous = reading;
   
   static int8_t lastSecond = -1;
-  
   // Call rtc.update() to update all rtc.seconds(), rtc.minutes(),
   // etc. return functions.
   rtc.update();
@@ -115,7 +87,8 @@ void loop()
     printTime(); // Print the new time
     
     lastSecond = rtc.second(); // Update lastSecond value
-  } 
+  }
+   
 
   // Check for alarm interrupts
 #ifdef INTERRUPT_PIN
@@ -126,12 +99,14 @@ void loop()
     // Check rtc.alarm1() to see if alarm 1 triggered the interrupt
     if (rtc.alarm1())
     {
+      shakeCounter = 0;
       Serial.println("ALARM 1!");
       while (shakeCounter <= 50){
         Serial.println(shakeCounter);
-        tone(outPin, 10000);
-        
+        tone(outPin, 10000,10); 
+        shakeSwitch();
       }
+      
      
       // Re-set the alarm for when s=30:
       rtc.setAlarm1(05,27,11);
@@ -180,6 +155,38 @@ void printTime()
                  String(rtc.month()) + "/"); // Print month
 #endif
   Serial.println(String(rtc.year()));        // Print year
+  
+  
+}
+void shakeSwitch()
+{
+  int switchstate;
+ 
+  reading = digitalRead(inPin);
+ 
+  // If the switch changed, due to bounce or pressing...
+  if (reading != previous) {
+    // reset the debouncing timer
+    time = millis();
+  } 
+ 
+  if ((millis() - time) > debounce) {
+     // whatever the switch is at, its been there for a long time
+     // so lets settle on it!
+     switchstate = reading;
+ 
+     // Now invert the output on the pin13 LED
+    if (switchstate == HIGH){
+      shakeCounter++;
+      Serial.print("Switch ON");
+      Serial.print(shakeCounter);
+      
+    }
+  }
+  //digitalWrite(outPin, LEDstate);
+ 
+  // Save the last reading so we keep a running tally
+  previous = reading;
   
   
 }
