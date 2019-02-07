@@ -1,3 +1,13 @@
+//#include <EepromAT24C32.h>
+//#include <RtcDateTime.h>
+//#include <RtcDS1302.h>
+//#include <RtcDS1307.h>
+//#include <RtcDS3231.h>
+//#include <RtcDS3234.h>
+//#include <RtcTemperature.h>
+//#include <RtcUtility.h>
+//#include <ThreeWire.h>
+
 /* Better Debouncer
  * 
  * This debouncing circuit is more rugged, and will work with tilt switches!
@@ -10,13 +20,12 @@
 // E.g. October 31, 2016: 10/31/16 vs. 31/10/16
 #define PRINT_USA_DATE
 
-//////////////////////////////////
-// Configurable Pin Definitions //
-//////////////////////////////////
+
 #define DS13074_CS_PIN 10 // DeadOn RTC Chip-select pin
 //#define INTERRUPT_PIN 2 // DeadOn RTC SQW/interrupt pin (optional)
-int inPin = 2;         // the number of the input pin
-int outPin = 13;       // the number of the output pin
+int inPin = 3;         // the number of the input pin
+int outPin = 8;       // the number of the output pin
+int shakeCounter = 0;
  
 int LEDstate = HIGH;      // the current state of the output pin
 int reading;           // the current reading from the input pin
@@ -38,14 +47,14 @@ void setup()
   // Call rtc.begin([cs]) to initialize the library
   // The chip-select pin should be sent as the only parameter
   rtc.begin(DS13074_CS_PIN);
-  //rtc.set12Hour(); // Use rtc.set12Hour to set to 12-hour mode
+  rtc.set12Hour(); // Use rtc.set12Hour to set to 12-hour mode
 
   // Now set the time...
   // You can use the autoTime() function to set the RTC's clock and
   // date to the compiler's predefined time. (It'll be a few seconds
   // behind, but close!)
-  rtc.autoTime();
-  // Or you can use the rtc.setTime(s, m, h, day, date, month, year)
+  //rtc.autoTime();
+  rtc.setTime(0, 26, 11, 3, 5, 2, 19);
   // function to explicitly set the time:
   // e.g. 7:32:16 | Monday October 31, 2016:
   //rtc.setTime(16, 32, 7, 2, 31, 10, 16);  // Uncomment to manually set time
@@ -56,9 +65,9 @@ void setup()
   // (Optional: enable SQW pin as an interrupt)
   rtc.enableAlarmInterrupt();
   // Set alarm1 to alert when seconds hits 30
-  rtc.setAlarm1(30);
+  rtc.setAlarm1(10,26,11);
   // Set alarm2 to alert when minute increments by 1
-  rtc.setAlarm2(rtc.minute() + 1);
+  //rtc.setAlarm2(rtc.minute() + 1);
   
   pinMode(inPin, INPUT);
   digitalWrite(inPin, HIGH);   // turn on the built in pull-up resistor
@@ -67,6 +76,33 @@ void setup()
  
 void loop()
 {
+  int switchstate;
+ 
+  reading = digitalRead(inPin);
+ 
+  // If the switch changed, due to bounce or pressing...
+  if (reading != previous) {
+    // reset the debouncing timer
+    time = millis();
+  } 
+ 
+  if ((millis() - time) > debounce) {
+     // whatever the switch is at, its been there for a long time
+     // so lets settle on it!
+     switchstate = reading;
+ 
+     // Now invert the output on the pin13 LED
+    if (switchstate == HIGH){
+      shakeCounter = shakeCounter + 1;
+      Serial.print("Switch ON");
+    }    else
+      noTone(outPin);
+  }
+  //digitalWrite(outPin, LEDstate);
+ 
+  // Save the last reading so we keep a running tally
+  previous = reading;
+  
   static int8_t lastSecond = -1;
   
   // Call rtc.update() to update all rtc.seconds(), rtc.minutes(),
@@ -90,15 +126,17 @@ void loop()
     if (rtc.alarm1())
     {
       Serial.println("ALARM 1!");
+      tone(outPin, 10000, 50);
+      //if shakeCounter >= 5
       // Re-set the alarm for when s=30:
-      rtc.setAlarm1(30);
+      rtc.setAlarm1(25,27,11);
     }
     // Check rtc.alarm2() to see if alarm 2 triggered the interrupt
-    if (rtc.alarm2())
+    //if (rtc.alarm2())
     {
-      Serial.println("ALARM 2!");
+      //Serial.println("ALARM 2!");
       // Re-set the alarm for when m increments by 1
-      rtc.setAlarm2(rtc.minute() + 1, rtc.hour());
+      //rtc.setAlarm2(rtc.minute() + 1, rtc.hour());
     }
 #ifdef INTERRUPT_PIN
   }
@@ -138,29 +176,5 @@ void printTime()
 #endif
   Serial.println(String(rtc.year()));        // Print year
   
-  int switchstate;
- 
-  reading = digitalRead(inPin);
- 
-  // If the switch changed, due to bounce or pressing...
-  if (reading != previous) {
-    // reset the debouncing timer
-    time = millis();
-  } 
- 
-  if ((millis() - time) > debounce) {
-     // whatever the switch is at, its been there for a long time
-     // so lets settle on it!
-     switchstate = reading;
- 
-     // Now invert the output on the pin13 LED
-    if (switchstate == HIGH)
-      LEDstate = LOW;
-    else
-      LEDstate = HIGH;
-  }
-  digitalWrite(outPin, LEDstate);
- 
-  // Save the last reading so we keep a running tally
-  previous = reading;
+  
 }
