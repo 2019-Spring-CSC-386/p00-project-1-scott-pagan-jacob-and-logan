@@ -47,42 +47,47 @@ This product will solve the issue of not waking up due to getting used to an ala
 
 # Summary
 
-You'll complete this part at the end of the project.
-
-Provide a brief summary description of the design and implementation, including how much your initial design plan evolved, the final result you achieved and the amount of time you spent as a programmer in accomplishing these results, including any challenges overcome and innovations that were not specifically required by the assignment. This section should be no more than three paragraphs.
+To summarize this experience, this turned out to be a lot more difficult than we originally planned. When we started, we sought to make a device that would help with scheduling. This evolved into wanting to make an alarm. That further evolved into wanting to make an alarm that needed to be shook to be turned off, forcing the user to actually move, increasing the chances that they would wake up and stay up. At first, we were making great strides in getting what we need done for our project to work. Near the end of the project, we got caught up on trying to get the alarm turn off, since we couldn’t get the code to recognize when we were shaking the sensor attached to the Arduino. Then we finally got it to where it would tell when it was being shook, but it refused to keep track of time in the serial monitor. We quickly fixed that and got our project to work as intended.
 
 # Instructions
 
-Explain how to use your product. This section should THOROUGHLY describe its usage (i.e., more than just "Push start").
+1. Set your alarm for when you want it to go off.
+2. When the alarm goes off, shake the sensor until the alarm stops.
 
 # Errors and Constraints
 
-You'll complete this part at the end of the project.
+You have to set the time and date in the code, or else the time is a little off in the serial monitor.
 
-Write 2 - 4 paragraphs on your reactions to the final project. Your reflection should be thoughtful and reflective. It is NOT a report about WHAT you did. Instead, it's a look back at what you learned by doing this project. It should be critical of shortcomings (yours, as well as the instructors/assignments) as well as celebratory of what was achieved.
+# Reflection
+
+When we first started, we had a few different ideas in mind for our project. After we did our journals for the two days, we decided an alarm would be helpful for keeping track of our tasks. At first, we wanted an alarm that you would scream at loudly until the alarm would shut off. This was not only a terrible idea, but it would evolve into our good idea; a clock you would have to shake to get the alarm to shut off.
+
+This moved into us finding the right materials for this assignment. The materials we ended up using were a breadboard, the Arduino Metro, many jumper cables, a broken tilt switch, another broken tilt switch, a 10k ohm resistor, a DeadOn RTC DS3234 clock, and a buzzer. It took us awhile to figure out how we needed to wire everything correctly. Through trial and error (and Jacob almost frying his computer), we were able to get everything working harmoniously.
+
+Once we were able to get the physical set up correct, we finally finished up our code. It took a lot of time and required us to study and understand the Arduino language better than we already did. This was a great learning experience and it was humbling. We were extremely happy once we were able to get everything working correctly. This project was a fun experience that helped both of us learn.
 
 # Final Self-Evaluations
 
 Ideation, Brainstorming, Design:
 
-Partner 1 (replace this with your name): 0-10
+Partner 1 Logan Owens: 5
 
-Partner 2 (replace this with your name): 0-10
+Partner 2 Jacob Beckman: 5
 
 Code creation:
 
-Partner 1 (replace this with your name): 0-10
+Partner 1 Logan Owens: 2
 
-Partner 2 (replace this with your name): 0-10
+Partner 2 Jacob Beckman: 8
 
 Documentation creation:
 
-Partner 1 (replace this with your name): 0-10
+Partner 1 Logan Owens: 7
 
-Partner 2 (replace this with your name): 0-10
+Partner 2 Jacob Beckman: 3
 
 Teamwork & Participation:
 
-Partner 1 (replace this with your name): 0-10
+Partner 1 Logan Owens: 5
 
-Partner 2 (replace this with your name): 0-10
+Partner 2 Jacob Beckman: 5
