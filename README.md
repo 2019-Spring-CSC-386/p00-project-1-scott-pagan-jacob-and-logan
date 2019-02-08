@@ -40,7 +40,6 @@ This product will solve the issue of not waking up due to getting used to an ala
 
 # References
 - Arduino IDE 
-- Stack Overflow: Will probably be used in the future
 - Berea College
 - SparkFun DS3234 Real-Time Clock Packages - https://learn.sparkfun.com/tutorials/deadon-rtc-breakout-hookup-guide/all
 - Arduino IDE Example: Digital Debouncer - https://learn.adafruit.com/tilt-sensor/using-a-tilt-sensor
@@ -52,11 +51,15 @@ To summarize this experience, this turned out to be a lot more difficult than we
 # Instructions
 
 1. Set your alarm for when you want it to go off.
-2. When the alarm goes off, shake the sensor until the alarm stops.
+2. Wait for the Alarm
+3. ?????
+4. Profit
+5. Once the alarm starts going off it will not turn off until the minimum amount of shakes.
+6. Shake the tilt switch (viciously) until the minimum number of shakes has been met.
 
 # Errors and Constraints
 
-You have to set the time and date in the code, or else the time is a little off in the serial monitor.
+You have to set the time and date in the code, or else the time is a little off in the serial monitor. The system can slightly be cheesed by holding the Tilt Switch down instead of shaking it. 
 
 # Reflection
 
